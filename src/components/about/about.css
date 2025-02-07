@@ -1,0 +1,93 @@
+.aboutme-page {
+  display: flex;
+  flex-direction: column;
+  background: #121212;
+  color: white;
+
+  box-sizing: border-box;
+  padding: 1rem;
+
+}
+
+.aboutme {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.aboutme-left {
+  flex: 1;
+  padding: 1rem;
+}
+
+.aboutme-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.aboutme-description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.download-resume {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #ff6600;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.aboutme-right {
+  flex: 0.4;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutme-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+@media (max-width: 767px) {
+  .aboutme {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .aboutme-left, .aboutme-right {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .aboutme-title {
+    font-size: 2rem;
+  }
+  
+  .aboutme-description {
+    font-size: 1rem;
+  }
+  
+  .download-resume {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .aboutme-right {
+    margin-top: 1rem;
+  }
+  
+  .aboutme-photo {
+  display: none;
+  }
+}

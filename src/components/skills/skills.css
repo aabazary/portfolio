@@ -1,0 +1,89 @@
+/* Common styles for the mobile carousel container */
+.mobile-carousel-container {
+  position: relative;
+  background: #121212;
+  padding: 2rem;
+  color: white;
+  /* Fixed height for smooth transitions */
+  height: 300px; /* adjust as needed */
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Each carousel item fills the wrapper */
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* For two-column carousel, each item is half width */
+.carousel-item.two-columns {
+  display: flex;
+}
+
+.carousel-item-half {
+  flex: 1;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Title and logos styles */
+.carousel-category-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-logos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.carousel-logo img {
+  height: 60px;
+  /* Adjust as needed */
+}
+
+/* Grid layout for large screens (≥1536px) */
+.skills-grid {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  background: #121212;
+  color: white;
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+.grid-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem; /* Reduced gap even more */
+  padding-top: 0px; /* Ensure no extra spacing */
+}
+
+.grid-category-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem; /* Reduce space further */
+  transform: translateY(-10px); /* Move text up slightly */
+}
+
+
+
+/* For medium screens (768px–1535px) and small screens (<768px),
+   we hide the grid */
+@media (max-width: 1535px) {
+  .skills-grid {
+    display: none;
+  }
+}

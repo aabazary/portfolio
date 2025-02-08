@@ -12,7 +12,7 @@
 
 .aboutme {
   display: flex;
-  padding: 2rem;
+  padding: 1rem 1rem 0 1rem;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;

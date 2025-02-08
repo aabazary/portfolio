@@ -4,8 +4,6 @@ import LazyLoad from "react-lazyload";
 import BackgroundStars from "./components/stars/BackgroundStars"; // adjust the path as needed
 
 const HomePage = lazy(() => import("./components/home/Home"));
-const Services = lazy(() => import("./components/services/Services"));
-const Skills = lazy(() => import("./components/skills/Skills"));
 const Portfolio = lazy(() => import("./components/portfolio/Portfolio"));
 const Contact = lazy(() => import("./components/contact/Contact"));
 const About = lazy(()=>  import("./components/about/About"));

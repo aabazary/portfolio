@@ -1,3 +1,9 @@
-# Lama Dev Animated 3D Portfolio Website Project
+# Ashkon "Akon" Abazary Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live link:
+https://portfolio-cs2p.onrender.com/
+
+## Screenshots
+
+![Home](public//ss1.jpg)
+![About](public//ss2.jpg)

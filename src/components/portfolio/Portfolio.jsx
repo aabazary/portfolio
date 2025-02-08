@@ -11,44 +11,50 @@ import { TextureLoader } from "three/src/loaders/TextureLoader";
 const items = [
   {
     id: 1,
-    img: "/NextRpg.jpg",
+    img: "/projects/NextRpg.jpg",
     title: "Next RPG",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit...",
+    desc: "Next RPG is a text-based role-playing game that allows users to battle, gather resources, and embark on quests to enhance their characters. I developed the entire application, including the back-end, front-end, and design.",
     github_link: "https://github.com/aabazary/nextRPG",
     live_link: "https://nextrpg.onrender.com",
-    technologies: ["/logos/html5.svg", "/logos/css.svg"],
+    technologies: ["/logos/tailwind.svg", "/logos/mongodb.svg","/logos/express.svg","/logos/react.svg","/logos/nodejs.svg"],
   },
   {
     id: 2,
-    img: "/Ascension.jpg",
+    img: "/projects/Ascension.jpg",
     title: "Ascension",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit...",
+    desc: "World of Ascension is a game that lets users battle and progress through their journey. My key contributions include creating battle logic and implementing game mechanics.",
     github_link: "https://github.com/yourrepo/school-system",
     live_link: "https://world-of-ascension.onrender.com/",
-    technologies: ["/logos/html5.svg"],
+    technologies: ["/logos/tailwind.svg", "/logos/mongodb.svg","/logos/express.svg","/logos/react.svg","/logos/nodejs.svg"],
   },
   {
     id: 3,
-    img: "/TravelApp.jpg",
+    img: "/projects/TravelApp.jpg",
     title: "Mobile Android Vacation App",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit...",
+    desc: "Mobile Vacation App is a mobile application designed to help users plan their vacations. It features clean navigation, a well-designed user interface, and a secure database-backed infrastructure.",
     github_link: "https://github.com/aabazary/MobileVacationApp",
-    download: "/app-release.apk",
+    download: "/projects/app-release.apk",
+    technologies: ["/logos/java.svg", "/logos/androidstudio.png"],
+    
   },
   {
     id: 4,
-    img: "/WeatherDashboard.jpg",
+    img: "/projects/WeatherDashboard.jpg",
     title: "Weather Dashboard",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit...",
+    desc: "Weather Dashboard is a tool that allows users to search for a city and view the current weather as well as a 5-day forecast. It includes a local storage feature to save previous searches for quick access",
     live_link: "https://aabazary.github.io/weather_dashboard/",
     github_link: "https://github.com/aabazary/weather_dashboard",
+    technologies: ["/logos/javascript.svg", "/logos/html5.svg","/logos/css.svg"],
+
   },
   {
     id: 5,
-    img: "/EmployeeManager.jpg",
+    img: "/projects/EmployeeManager.jpg",
     title: "Employee Manager CLI",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit...",
+    desc: "Employee Tracker is a command-line application that helps manage company employees. It allows users to add departments, roles, and employees, and view or update their information.",
     github_link: "https://github.com/aabazary/employee_tracker",
+    technologies: ["/logos/javascript.svg", "/logos/mysql.svg","/logos/nodejs.svg"],
+
   },
 ];
 

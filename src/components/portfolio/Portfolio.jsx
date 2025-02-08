@@ -86,7 +86,7 @@ const TechIcon3D = ({ src, position }) => {
   useFrame((state) => {
     if (meshRef.current) {
       // Oscillate: when sin(t)=1, angle ~ (60-20)=40°; when sin(t)=-1, angle ~ (-60-20)=-80°.
-      const angle = THREE.MathUtils.degToRad(60 * Math.sin(state.clock.getElapsedTime()) - 10);
+      const angle = THREE.MathUtils.degToRad(30 * Math.sin(state.clock.getElapsedTime()) - 10);
       meshRef.current.rotation.y = angle;
     }
   });

@@ -101,7 +101,7 @@ const Contact = () => {
           {error && <span>Something went wrong!</span>}
         </motion.form>
       </div>
-      <div className="cSection">
+      <div id="contactGame" className="cSection">
        <ContactGame/>
       </div>
       

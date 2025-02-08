@@ -76,4 +76,7 @@ label {
   .cSection:last-child {
     height: 30%;
   }
+  #contactGame{
+    display: none;
+  }
 }

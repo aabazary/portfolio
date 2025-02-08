@@ -3,9 +3,10 @@
   flex-direction: column;
   background: #121212;
   color: white;
-
+  border-radius: 20px;
   box-sizing: border-box;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
 }
 

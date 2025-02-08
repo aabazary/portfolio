@@ -75,10 +75,16 @@ section {
   height: 100vh;
   scroll-snap-align: center;
 }
+#about{
+  padding-top: 2rem;
+}
 
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
+  }
+  #about{
+    padding-top: 2rem;
   }
 }
 
@@ -86,11 +92,20 @@ section {
   .container {
     max-width: 768px;
   }
+  #about{
+    padding-top: 1rem;
+  }
+  #about{
+    padding-top: 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
+  }
+  #about{
+    padding-top: 1rem;
   }
 }
 
@@ -98,10 +113,16 @@ section {
   .container {
     max-width: 1280px;
   }
+  #about{
+    padding-top: 2rem;
+  }
 }
 
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+  }
+  #about{
+    padding-top: 2rem;
   }
 }

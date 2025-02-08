@@ -29,21 +29,19 @@ const CategorySkillsCanvas = ({ logos }) => {
   const rowSpacing = 2;
   const maxPerRow = 3;
 
-  const totalRows = Math.ceil(logos.length / maxPerRow); // Calculate rows dynamically
-  const containerHeight = totalRows * rowSpacing * 1.5 + 300; // Adjust height
+  const totalRows = Math.ceil(logos.length / maxPerRow); 
+  const containerHeight = totalRows * rowSpacing * 1.5 + 300; 
 
   const positions = logos.map((logo, index) => {
     const row = Math.floor(index / maxPerRow);
     const colInRow = index % maxPerRow;
     const itemsInRow = Math.min(logos.length - row * maxPerRow, maxPerRow);
   
-    // Center last row properly
     const centerOffset = (itemsInRow - 1) * spacing * 0.5;
     const x = colInRow * spacing - centerOffset;
     
-    // Adjust Y-positioning to prevent shifting down
     const totalRows = Math.ceil(logos.length / maxPerRow);
-    const yOffset = (totalRows - 1) * rowSpacing * 0.5; // Center everything vertically
+    const yOffset = (totalRows - 1) * rowSpacing * 0.5; 
     const y = -row * rowSpacing + yOffset; 
   
     return [x, y, 0];
@@ -169,6 +167,8 @@ const Skills = () => {
     { src: "/logos/tailwind.svg" },
     { src: "/logos/handlebars.svg" },
     { src: "/logos/react.svg" },
+    { src: "/logos/angular.svg" },
+
   ];
   const backendLogos = [
     { src: "/logos/nodejs.svg" },
@@ -184,6 +184,9 @@ const Skills = () => {
     { src: "/logos/insomnia.svg" },
     { src: "/logos/postman.svg" },
     { src: "/logos/render.svg" },
+    { src: "/logos/chatgpt.svg" },
+    { src: "/logos/androidstudio.png" },
+
   ];
   const versionLogos = [
     { src: "/logos/git.svg" },

@@ -13,13 +13,6 @@
   justify-content: center;
 }
 
-.cSection:last-child {
-  background-color: rgba(2, 2, 45, 0.187);
-  margin: 50px 0px;
-  padding: 50px;
-  border-radius: 50% 0px;
-}
-
 form {
   width: 80%;
   display: flex;
@@ -48,7 +41,7 @@ label {
 }
 
 .formButton {
-  background-color: #dd4c62;
+  background-color: #0c963a;
   color: white;
   padding: 20px;
   border: none;

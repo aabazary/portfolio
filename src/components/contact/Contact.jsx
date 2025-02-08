@@ -1,7 +1,8 @@
 import "./contact.css";
 import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
+import { useRef, useState ,useEffect} from "react";
 import { motion, useInView } from "motion/react";
+import ContactGame from "../contactGame/ContactGame";
 
 
 const listVariant = {
@@ -51,6 +52,15 @@ const Contact = () => {
       );
   };
 
+  useEffect(() => {
+    if (success || error) {
+      const timer = setTimeout(() => {
+        setSuccess(false);
+        setError(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, error]);
   const isInView = useInView(ref, { margin: "-200px" });
 
   return (
@@ -62,7 +72,7 @@ const Contact = () => {
           animate={isInView ? "animate" : "initial"}
         >
           <motion.h1 variants={listVariant} className="cTitle">
-            Let's keep in touch
+            Feel free to leave a Message!
           </motion.h1>
           <motion.div variants={listVariant} className="formItem">
             <label>Name</label>
@@ -91,7 +101,10 @@ const Contact = () => {
           {error && <span>Something went wrong!</span>}
         </motion.form>
       </div>
-      <div className="cSection"></div>
+      <div className="cSection">
+       <ContactGame/>
+      </div>
+      
     </div>
   );
 };

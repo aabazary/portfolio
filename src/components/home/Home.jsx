@@ -121,7 +121,7 @@ const Home = () => {
       </div>
       {/* Header Text near the top (adjusted via CSS) */}
       <div className="hero-text">
-        <AnimatedText text="Akon Abazary" className="heroName" controls={headerControls} />
+        <AnimatedText text="Akon  Abazary" className="heroName" controls={headerControls} />
         <AnimatedText
           text="Full Stack Developer"
           className="heroSubtitle"

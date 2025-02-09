@@ -1,9 +1,8 @@
-// AboutMe.jsx
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "./about.css";
-import Skills from "../skills/Skills";       
-import Credentials from "../credentials/Credentials"; 
-
+import Skills from "../skills/Skills";
+import Credentials from "../credentials/Credentials";
 
 const About = () => {
   return (
@@ -38,19 +37,53 @@ const About = () => {
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-With a background in both entrepreneurship and technology, I bring a unique perspective to full-stack development. For ten years, I successfully ran an auto service business, where I developed strong problem-solving skills and a knack for efficient management. Now, as a passionate developer, I craft responsive and scalable web applications, constantly seeking new challenges and learning opportunities.
+            With a background in both entrepreneurship and technology, I bring a unique perspective to full-stack development. For ten years, I successfully ran an auto service business, where I developed strong problem-solving skills and a knack for efficient management. Now, as a passionate developer, I craft responsive and scalable web applications, constantly seeking new challenges and learning opportunities.
           </motion.p>
-          <motion.a 
-            href="/resume.pdf" 
-            download 
-            className="download-resume"
+          {/* Button Group */}
+          <motion.div 
+            className="aboutme-buttons"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Download Resume
-          </motion.a>
+            <motion.a 
+              href="/resume.pdf" 
+              download 
+              className="download-resume"
+              // You can adjust these animation settings if needed:
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Download Resume
+            </motion.a>
+            <motion.a
+              href="https://github.com/aabazary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="github-link"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <FaGithub size={24} />
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/ashkon-abazary-19b099213/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="linkedin-link"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <FaLinkedin size={24} />
+            </motion.a>
+          </motion.div>
         </motion.div>
         <motion.div 
           className="aboutme-right"

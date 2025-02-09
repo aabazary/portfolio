@@ -58,6 +58,41 @@
   object-fit: cover;
   z-index: 1;
 }
+.aboutme-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.download-resume,
+.github-link,
+.linkedin-link {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.github-link,
+.linkedin-link {
+  padding: 0.5rem;
+}
+
+.download-resume:hover{
+background-color: #dd6f26e3;
+}
+.github-link:hover{
+  background-color: #726d6ae3;
+
+}
+.linkedin-link:hover{
+  background-color: #726d6ae3;
+  ;
+
+} 
 
 
 @media (max-width: 767px) {

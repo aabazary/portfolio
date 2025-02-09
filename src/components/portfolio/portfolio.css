@@ -4,6 +4,7 @@
 }
 
 .pList {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   display: flex;
@@ -33,6 +34,7 @@
 
 /* Progress bar */
 .pProgress {
+  position: -webkit-sticky;
   position: sticky;
   bottom: 50px;
   left: 100%;
@@ -139,7 +141,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .pItem {
     flex-direction: column;
   }
@@ -154,6 +156,34 @@
   }
   .pCard{
     margin-bottom: 10%;
+  }
+} */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .portfolio-tablet {
+    /* Let the container's height grow with its children */
+    height: auto;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    /* Optional: add padding or background adjustments if needed */
+  }
+  .portfolio {
+    overflow-anchor: none;
+  }
+
+  .portfolio, .pList, .pProgress {
+    transform: translateZ(0);
+  }
+  
+
+  /* Target ListItem container when in tablet view */
+  .portfolio-tablet .pItem {
+    /* Force each project to take up the full viewport height */
+    height: 100vh;
+    scroll-snap-align: start;
+    /* If desired, adjust layout; for example, force a column layout */
+    flex-direction: column;
+    /* You can also add padding/margins if needed */
   }
 }
 

@@ -111,6 +111,21 @@
   height: 100%;
 }
 
+/* Tablet-specific styles */
+.portfolio-tablet {
+  height: auto;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  /* Add padding or margins as needed */
+}
+
+.pItemTablet {
+  height: 100vh;
+  scroll-snap-align: start;
+  /* Tablet-specific layout adjustments */
+}
+
+
 /* Media queries */
 @media (max-width: 1536px) {
   .pItem {
@@ -142,54 +157,32 @@
   }
 }
 
-/* @media (max-width: 768px) {
-  .pProgress {
-    width: 50px;
-    height: 50px;
-  }
-  .portfolio {
-    height: auto; 
-    scroll-snap-type: none;
-  }
 
-  .pList {
-    flex-direction: column;
-    overflow-x: auto;
-  }
-  .pItem {
-    height: auto; 
-    scroll-snap-align: center;
-  }
-  .empty{
-    display: none;
-  }
-} */
 
 @media (max-width: 768px) {
   .portfolio {
-    /* Let the container's height be determined by its children */
     height: auto;
-    /* Enable vertical snap scrolling */
     scroll-snap-type: y mandatory;
   }
   .pList {
     flex-direction: column;
-    /* Change from horizontal to vertical scrolling */
     overflow-y: auto;
-    /* Remove any horizontal scroll-related properties */
     overflow-x: hidden;
   }
   .pItem {
-    /* Force each project card to take a full viewport height */
+    padding-top: 10%;
+    justify-content: start;
     height: 100vh;
-    /* Snap each item to the top (or center, if you prefer) */
     scroll-snap-align: start;
   }
   .empty {
     display: none;
   }
-  /* Optionally, adjust inner widths for a better mobile layout */
   .pImg, .pText {
     width: 100%;
   }
+  .tech-stack{
+    height: 50px;
+  }
+
 }

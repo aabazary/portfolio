@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import { useRef } from "react";
 import * as THREE from "three";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
+import { useBreakpoint } from "./useBreakpoint"
 
 const imgVariants = {
     initial: { x: -500, y: 500, opacity: 0 },
@@ -29,50 +30,62 @@ const imgVariants = {
   
   // --- TechnologiesCanvas Component ---
   // Renders 3D spinning technology icons scaled 3x larger.
-  const TechIcon3D = ({ src, position }) => {
+  const TechIcon3D = ({ src, position, iconSize }) => {
     const meshRef = useRef();
     const texture = useLoader(TextureLoader, src);
+  
     useFrame((state) => {
       if (meshRef.current) {
-        // Oscillate: when sin(t)=1, angle ~ (60-20)=40°; when sin(t)=-1, angle ~ (-60-20)=-80°.
-        const angle = THREE.MathUtils.degToRad(
-          30 * Math.sin(state.clock.getElapsedTime()) - 10
-        );
+        const angle = THREE.MathUtils.degToRad(30 * Math.sin(state.clock.getElapsedTime()) - 10);
         meshRef.current.rotation.y = angle;
       }
     });
+  
     return (
       <mesh ref={meshRef} position={position}>
-        <planeGeometry args={[2, 2]} />
+        <planeGeometry args={[iconSize, iconSize]} />
         <meshBasicMaterial map={texture} transparent side={THREE.DoubleSide} />
       </mesh>
     );
   };
   
-const TechnologiesCanvas = ({ techs }) => {
-    const spacing = 3; // Increase spacing since icons are larger.
+  
+  const TechnologiesCanvas = ({ techs }) => {
+    const breakpoint = useBreakpoint();
+  
+    let iconSize, spacing;
+    if (breakpoint === "mobile") {
+      iconSize = 4;
+      spacing = 5;
+    } else if (breakpoint === "tablet") {
+      iconSize = 3;
+      spacing = 4;
+    } else {
+      // desktop
+      iconSize = 2;
+      spacing = 3;
+    }
+  
+    // Compute positions based on spacing
     const positions = techs.map((tech, index) => [
       (index - (techs.length - 1) / 2) * spacing,
       0,
       0,
     ]);
+  
     return (
       <div className="tech-canvas-container">
-        <Canvas
-          camera={{ position: [0, 0, 5] }}
-          style={{ width: "100%", height: "100%" }}
-        >
+        <Canvas camera={{ position: [0, 0, 5] }} style={{ width: "100%", height: "100%" }}>
           <ambientLight intensity={0.8} />
           <Suspense fallback={null}>
             {techs.map((tech, index) => (
-              <TechIcon3D key={index} src={tech} position={positions[index]} />
+              <TechIcon3D key={index} src={tech} position={positions[index]} iconSize={iconSize} />
             ))}
           </Suspense>
         </Canvas>
       </div>
     );
   };
-  
   // --- ListItem Component ---
   const ListItem = ({ item }) => {
     const ref = useRef();

@@ -79,4 +79,8 @@ label {
   #contactGame{
     display: none;
   }
+  form{
+    padding: 0;
+    padding-top: 20%;
+  }
 }

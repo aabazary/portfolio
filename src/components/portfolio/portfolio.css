@@ -4,7 +4,6 @@
 }
 
 .pList {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   display: flex;
@@ -34,7 +33,6 @@
 
 /* Progress bar */
 .pProgress {
-  position: -webkit-sticky;
   position: sticky;
   bottom: 50px;
   left: 100%;
@@ -113,6 +111,21 @@
   height: 100%;
 }
 
+/* Tablet-specific styles */
+.portfolio-tablet {
+  height: auto;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  /* Add padding or margins as needed */
+}
+
+.pItemTablet {
+  height: 100vh;
+  scroll-snap-align: start;
+  /* Tablet-specific layout adjustments */
+}
+
+
 /* Media queries */
 @media (max-width: 1536px) {
   .pItem {
@@ -126,7 +139,7 @@
   }
 }
 
-/* @media (max-width: 1024px) {
+@media (max-width: 1024px) {
   .pItem {
     flex-direction: column;
   }
@@ -142,84 +155,34 @@
   .pCard{
     margin-bottom: 10%;
   }
-} */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .portfolio-tablet {
-    /* Let the container's height grow with its children */
-    height: auto;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    /* Optional: add padding or background adjustments if needed */
-  }
-  .portfolio {
-    overflow-anchor: none;
-  }
-
-  .portfolio, .pList, .pProgress {
-    transform: translateZ(0);
-  }
-  
-
-  /* Target ListItem container when in tablet view */
-  .portfolio-tablet .pItem {
-    /* Force each project to take up the full viewport height */
-    height: 100vh;
-    scroll-snap-align: start;
-    /* If desired, adjust layout; for example, force a column layout */
-    flex-direction: column;
-    /* You can also add padding/margins if needed */
-  }
 }
 
-/* @media (max-width: 768px) {
-  .pProgress {
-    width: 50px;
-    height: 50px;
-  }
-  .portfolio {
-    height: auto; 
-    scroll-snap-type: none;
-  }
 
-  .pList {
-    flex-direction: column;
-    overflow-x: auto;
-  }
-  .pItem {
-    height: auto; 
-    scroll-snap-align: center;
-  }
-  .empty{
-    display: none;
-  }
-} */
 
 @media (max-width: 768px) {
   .portfolio {
-    /* Let the container's height be determined by its children */
     height: auto;
-    /* Enable vertical snap scrolling */
     scroll-snap-type: y mandatory;
   }
   .pList {
     flex-direction: column;
-    /* Change from horizontal to vertical scrolling */
     overflow-y: auto;
-    /* Remove any horizontal scroll-related properties */
     overflow-x: hidden;
   }
   .pItem {
-    /* Force each project card to take a full viewport height */
+    padding-top: 10%;
+    justify-content: start;
     height: 100vh;
-    /* Snap each item to the top (or center, if you prefer) */
     scroll-snap-align: start;
   }
   .empty {
     display: none;
   }
-  /* Optionally, adjust inner widths for a better mobile layout */
   .pImg, .pText {
     width: 100%;
   }
+  .tech-stack{
+    height: 50px;
+  }
+
 }

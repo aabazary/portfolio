@@ -1,9 +1,9 @@
-// Portfolio.jsx
-import PortfolioDesktop from "./PortfolioDesktop.jsx";
-import PortfolioTablet from "./PortfolioTablet.jsx";
-import PortfolioMobile from "./PortfolioMobile.jsx";
-import { useBreakpoint } from "./useBreakpoint";
+/* eslint-disable react/no-unknown-property */
+import { useEffect, useRef, useState } from "react";
 import "./portfolio.css";
+import PortfolioDesktop from "./PortfolioDesktop.jsx";
+import PortfolioMobile from "./PortfolioMobile.jsx";
+
 
 const items = [
   {
@@ -52,7 +52,11 @@ const items = [
     desc: "Weather Dashboard is a tool that allows users to search for a city and view the current weather as well as a 5-day forecast. It includes a local storage feature to save previous searches for quick access",
     live_link: "https://aabazary.github.io/weather_dashboard/",
     github_link: "https://github.com/aabazary/weather_dashboard",
-    technologies: ["/logos/javascript.svg", "/logos/html5.svg", "/logos/css.svg"],
+    technologies: [
+      "/logos/javascript.svg",
+      "/logos/html5.svg",
+      "/logos/css.svg",
+    ],
   },
   {
     id: 5,
@@ -60,20 +64,31 @@ const items = [
     title: "Employee Manager CLI",
     desc: "Employee Tracker is a command-line application that helps manage company employees. It allows users to add departments, roles, and employees, and view or update their information.",
     github_link: "https://github.com/aabazary/employee_tracker",
-    technologies: ["/logos/javascript.svg", "/logos/mysql.svg", "/logos/nodejs.svg"],
+    technologies: [
+      "/logos/javascript.svg",
+      "/logos/mysql.svg",
+      "/logos/nodejs.svg",
+    ],
   },
 ];
 
-const Portfolio = () => {
-  const breakpoint = useBreakpoint();
 
-  if (breakpoint === "desktop") {
-    return <PortfolioDesktop items={items} />;
-  } else if (breakpoint === "tablet") {
-    return <PortfolioTablet items={items} />;
-  } else {
-    return <PortfolioMobile items={items} />;
-  }
+const Portfolio = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isMobile ? (
+    <PortfolioMobile items={items} />
+  ) : (
+    <PortfolioDesktop items={items} />
+  );
 };
 
 export default Portfolio;

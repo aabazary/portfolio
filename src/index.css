@@ -79,11 +79,9 @@ section {
   padding-top: 2rem;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .container {
     max-width: 640px;
-    padding-left: 0;
-    padding-right: 0;
   }
   #about{
     padding-top: 2rem;
@@ -93,8 +91,6 @@ section {
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
-    padding-left: 0;
-    padding-right: 0;
   }
   #about{
     padding-top: 1rem;
